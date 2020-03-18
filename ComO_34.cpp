@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 int main() {
-    int n,q,i1,j1,i2,j2,temp;
+    int n,q,i1,j1,i2,j2;
     scanf("%d",&n);
-    int land[n][n],prefix[n+1][n+1];
+    int land[n][n];
+    long long prefix[n+1][n+1];
     for (int i = 0; i <= n; ++i) {
         for (int j = 0; j <= n; ++j) {
             if(i==0||j==0){
@@ -16,15 +16,16 @@ int main() {
             }
         }
     }
-    for (int k = 1; k <= n; ++k) {
-        for (int j = 1; j <= n; ++j) {
+/*    for (long long k = 1; k <= n; ++k) {
+        for (long long j = 1; j <= n; ++j) {
             cout << prefix[k][j] << " ";
         }
         cout << "\n";
-    }
+    }*/
     scanf("%d",&q);
     for (int i = 0; i < q; ++i) {
         scanf(" %d %d %d %d",&i1,&j1,&i2,&j2);
+        i1++;j1++;i2++;j2++;
         cout << prefix[i2][j2] - prefix[i1-1][j2] - prefix[i2][j1-1] + prefix[i1-1][j1-1] << "\n";
     }
     return 0;

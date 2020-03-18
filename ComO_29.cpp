@@ -11,7 +11,7 @@ int Subtitle(const string &a, const string &b) {
                 dp[i][j] = j;
             } else if (j == 0) {
                 dp[i][j] = i;
-            } else if (a[i] == b[j]) {
+            } else if (a[i-1] == b[j-1]) {
                 dp[i][j] = dp[i - 1][j - 1];
             } else {
                 dp[i][j] = min(dp[i][j - 1], min(dp[i - 1][j], dp[i - 1][j - 1])) + 1;
@@ -25,7 +25,8 @@ int main() {
     string a, b;
     cin >> a >> b;
     int g = Subtitle(a, b);
-    bool gB = g < ceil(max(a.length(), b.length()) / 2);
+    int limit = ceil(max(a.length(), b.length()) / 2.0);
+    bool gB = g < limit;
     cout << g << " " << gB;
     return 0;
 }

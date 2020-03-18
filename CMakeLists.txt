@@ -32,3 +32,8 @@ add_executable(ComO_28 ComO_28.cpp)
 add_executable(ComO_29 ComO_29.cpp)
 add_executable(ComO_34 ComO_34.cpp)
 add_executable(ComO_14 ComO_14.cpp)
+add_executable(ComO_12_Brute ComO_12_Brute.cpp)
+
+add_executable(ComO_27TD ComO_27TD.cpp)
+add_executable(ComO_30 ComO_30.cpp)
+add_executable(ComO_33 ComO_33.cpp)
